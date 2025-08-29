@@ -1,0 +1,6 @@
+@EjiaService.WebAPI_HostAddress = http://localhost:5216
+
+GET {{EjiaService.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

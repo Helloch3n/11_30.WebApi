@@ -1,0 +1,25 @@
+﻿@inject HttpClient Http
+@using System.Data
+@using Microsoft.JSInterop;
+
+@code {
+    private readonly HttpClient _http;
+    private readonly IJSRuntime _jsRuntime;
+
+    public EJiaApiService(HttpClient http, IJSRuntime jsRuntime)
+    {
+        _http = http;
+        _jsRuntime = jsRuntime ?? throw new ArgumentNullException(nameof(jsRuntime));
+    }
+
+    public async Task<ApiResponse> ReadingNewsAsync(EJiaNews apiResponse)
+    {
+        var response = await _http.PostAsJsonAsync($"11_30/EJia/EJiaAutoNews", apiResponse);
+        if (response.IsSuccessStatusCode)
+        {
+            var result = await response.Content.ReadFromJsonAsync<ApiResponse>();
+            return result;
+        }
+        return null;
+    }
+}

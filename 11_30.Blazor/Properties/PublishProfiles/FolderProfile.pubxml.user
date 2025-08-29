@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>F:\.NET Practice\11_30\11_30.Blazor\bin\Release\net8.0\11_30.Blazor\</_PublishTargetUrl>
+    <History>True|2025-07-22T06:17:15.5221824Z||;True|2025-07-21T22:48:19.2152236+08:00||;True|2025-07-21T21:40:04.3723923+08:00||;True|2025-07-10T15:41:13.5893513+08:00||;True|2025-07-09T08:50:00.1966197+08:00||;True|2025-07-09T08:40:52.1275580+08:00||;True|2025-07-08T17:03:26.7808491+08:00||;True|2025-07-08T16:57:56.7993800+08:00||;True|2025-07-08T16:56:55.2171067+08:00||;True|2025-07-08T14:40:17.5442698+08:00||;True|2025-07-08T10:40:10.4961293+08:00||;True|2025-07-08T09:27:51.4447241+08:00||;True|2025-07-08T08:47:36.8427785+08:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

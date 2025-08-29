@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "CtR19IQPqBfXqaltdys2zcS4jCPoQC1En+vGiszVZuI=",
+  "Source": "ActiveDirectoryService.WebAPI",
+  "BasePath": "_content/ActiveDirectoryService.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

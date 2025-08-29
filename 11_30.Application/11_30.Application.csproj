@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>_11_30.Application</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Interface\IErpService.cs" />
+    <Compile Remove="Services\ErpService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\11_30.Domain\11_30.Domain.csproj" />
+    <ProjectReference Include="..\11_30.Infrastructure\11_30.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DomainEventHandlers\" />
+  </ItemGroup>
+
+</Project>

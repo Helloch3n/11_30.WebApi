@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>F:\.NET Practice\11_30\11_30.WebApi\bin\Release\net8.0\11_30.WebApi\</_PublishTargetUrl>
+    <History>True|2025-07-22T08:33:14.4393211Z||;True|2025-07-22T14:17:05.9592128+08:00||;True|2025-07-21T22:32:27.7881303+08:00||;True|2025-07-21T22:22:44.1960873+08:00||;True|2025-07-21T22:22:41.4549321+08:00||;True|2025-07-21T21:39:52.8601301+08:00||;True|2025-07-08T17:03:35.2826549+08:00||;True|2025-07-08T16:58:19.5129465+08:00||;True|2025-07-08T09:47:14.1083173+08:00||;True|2025-07-08T08:46:42.8178670+08:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

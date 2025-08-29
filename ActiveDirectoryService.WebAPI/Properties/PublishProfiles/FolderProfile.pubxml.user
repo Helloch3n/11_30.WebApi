@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>F:\.NET Practice\11_30\ActiveDirectoryService.WebAPI\bin\Release\net8.0\AdService.WebApi\</_PublishTargetUrl>
+    <History>True|2025-08-24T07:37:59.4882963Z||;True|2025-08-24T15:30:02.2022617+08:00||;True|2025-08-24T15:24:50.9841093+08:00||;True|2025-08-24T11:22:31.0637566+08:00||;True|2025-08-24T10:49:13.4823720+08:00||;True|2025-08-24T10:10:59.2644595+08:00||;True|2025-08-24T09:57:51.7362591+08:00||;True|2025-08-24T09:44:23.1258421+08:00||;True|2025-08-24T09:30:25.1600369+08:00||;True|2025-08-23T14:34:13.8900439+08:00||;True|2025-08-21T12:40:39.8889613+08:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,13 @@
+F:\.NET Practice\11_30\EjiaService.Domain\bin\Debug\net8.0\EjiaService.Domain.deps.json
+F:\.NET Practice\11_30\EjiaService.Domain\bin\Debug\net8.0\EjiaService.Domain.dll
+F:\.NET Practice\11_30\EjiaService.Domain\bin\Debug\net8.0\EjiaService.Domain.pdb
+F:\.NET Practice\11_30\EjiaService.Domain\obj\Debug\net8.0\EjiaService.Domain.csproj.AssemblyReference.cache
+F:\.NET Practice\11_30\EjiaService.Domain\obj\Debug\net8.0\EjiaService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\.NET Practice\11_30\EjiaService.Domain\obj\Debug\net8.0\EjiaService.Domain.AssemblyInfoInputs.cache
+F:\.NET Practice\11_30\EjiaService.Domain\obj\Debug\net8.0\EjiaService.Domain.AssemblyInfo.cs
+F:\.NET Practice\11_30\EjiaService.Domain\obj\Debug\net8.0\EjiaService.Domain.csproj.CoreCompileInputs.cache
+F:\.NET Practice\11_30\EjiaService.Domain\obj\Debug\net8.0\EjiaService.Domain.sourcelink.json
+F:\.NET Practice\11_30\EjiaService.Domain\obj\Debug\net8.0\EjiaService.Domain.dll
+F:\.NET Practice\11_30\EjiaService.Domain\obj\Debug\net8.0\refint\EjiaService.Domain.dll
+F:\.NET Practice\11_30\EjiaService.Domain\obj\Debug\net8.0\EjiaService.Domain.pdb
+F:\.NET Practice\11_30\EjiaService.Domain\obj\Debug\net8.0\ref\EjiaService.Domain.dll

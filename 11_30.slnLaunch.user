@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "全部项目启动",
+    "Projects": [
+      {
+        "Path": "11_30.WebApi\\11_30.WebAPI.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "11_30.Blazor\\11_30.Blazor.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "ActiveDirectoryService.WebAPI\\ActiveDirectoryService.WebAPI.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "Gateway\\Gateway.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "EjiaService.WebAPI\\EjiaService.WebAPI.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      }
+    ]
+  }
+]

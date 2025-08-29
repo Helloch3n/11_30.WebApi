@@ -1,0 +1,13 @@
+F:\.NET Practice\11_30\ActiveDirectoryService.Infrastructure\bin\Debug\net8.0\ActiveDirectoryService.Infrastructure.deps.json
+F:\.NET Practice\11_30\ActiveDirectoryService.Infrastructure\bin\Debug\net8.0\ActiveDirectoryService.Infrastructure.dll
+F:\.NET Practice\11_30\ActiveDirectoryService.Infrastructure\bin\Debug\net8.0\ActiveDirectoryService.Infrastructure.pdb
+F:\.NET Practice\11_30\ActiveDirectoryService.Infrastructure\obj\Debug\net8.0\ActiveDirectoryService.Infrastructure.csproj.AssemblyReference.cache
+F:\.NET Practice\11_30\ActiveDirectoryService.Infrastructure\obj\Debug\net8.0\ActiveDirectoryService.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+F:\.NET Practice\11_30\ActiveDirectoryService.Infrastructure\obj\Debug\net8.0\ActiveDirectoryService.Infrastructure.AssemblyInfoInputs.cache
+F:\.NET Practice\11_30\ActiveDirectoryService.Infrastructure\obj\Debug\net8.0\ActiveDirectoryService.Infrastructure.AssemblyInfo.cs
+F:\.NET Practice\11_30\ActiveDirectoryService.Infrastructure\obj\Debug\net8.0\ActiveDirectoryService.Infrastructure.csproj.CoreCompileInputs.cache
+F:\.NET Practice\11_30\ActiveDirectoryService.Infrastructure\obj\Debug\net8.0\ActiveDirectoryService.Infrastructure.sourcelink.json
+F:\.NET Practice\11_30\ActiveDirectoryService.Infrastructure\obj\Debug\net8.0\ActiveDirectoryService.Infrastructure.dll
+F:\.NET Practice\11_30\ActiveDirectoryService.Infrastructure\obj\Debug\net8.0\refint\ActiveDirectoryService.Infrastructure.dll
+F:\.NET Practice\11_30\ActiveDirectoryService.Infrastructure\obj\Debug\net8.0\ActiveDirectoryService.Infrastructure.pdb
+F:\.NET Practice\11_30\ActiveDirectoryService.Infrastructure\obj\Debug\net8.0\ref\ActiveDirectoryService.Infrastructure.dll

@@ -1,0 +1,98 @@
+﻿@page "/eJiaAutoNews"
+@rendermode InteractiveServer
+@inject EJiaApiService EJiaApiService
+@inject IToastService ToastService
+
+<div>
+    <FluentSelect Items=@options
+                  OptionText="@(i => i.Text)"
+                  OptionValue="@(i => i.Value)"
+                  OptionSelected="@(i => i.Selected)"
+                  @bind-Value="@NewsType" />
+</div>
+<div style="display: flex; flex-direction:row; gap:10px; ">
+
+    <div>
+        <FluentDatePicker Label="开始日期" AriaLabel="To" @bind-Value="@StartDate" />
+    </div>
+    <div>
+        <FluentDatePicker Label="结束日期" AriaLabel="To" @bind-Value="@EndDate" />
+    </div>
+</div>
+<FluentStack Style="margin-bottom: 24px;" VerticalAlignment="VerticalAlignment.Center">
+    <FluentTextField Label="用户名"
+                     Placeholder="请输入用户名"
+                     @bind-Value="UserName"
+                     Required />
+
+    <FluentTextField Label="密码"
+                     Placeholder="请输入密码"
+                     @bind-Value="Password"
+                     CanRevealPassword
+                     Required />
+    <FluentButton Appearance="Appearance.Accent" OnClick="StartReadNews" Disabled="isClick">开始阅读</FluentButton>
+</FluentStack>
+<FluentProgress Value="@progressValue" Max="100"></FluentProgress>
+<p>@msg</p>
+
+@code
+{
+    private DateTime? StartDate = DateTime.Today.AddDays(-2);
+    private DateTime? EndDate = DateTime.Today;
+    private string UserName { get; set; } = string.Empty;
+    private string Password { get; set; } = string.Empty;
+    private string NewsType { get; set; } = options[0].Value;
+    private string Message { get; set; } = string.Empty;
+    private bool IsReading { get; set; } = false;
+    private int progressValue = 0;
+    private System.Timers.Timer? progressTimer;
+    private bool isApiCalling = false;
+    private bool isClick = false;
+    private string msg = "未开始";
+    string? stringValue;
+    static List<Option<string>> options = new()
+    {
+        { new Option<string> { Value = "德缆公司新闻资讯", Text = "德缆公司新闻资讯" } },
+        { new Option<string> { Value = "新闻资讯", Text = "新闻资讯" } },
+    };
+
+    public async Task StartReadNews()
+    {
+        isClick=true;
+        IsReading=true;
+        msg="进行中";
+
+        var eJia = new EJiaNews()
+            {
+                UserName=UserName,
+                PassWord=Password,
+                StartDate=StartDate,
+                EndDate=EndDate,
+                NewsType=NewsType
+            };
+
+        ApiResponse response = await EJiaApiService.ReadingNewsAsync(eJia);
+        isClick=false;
+        if (response.Code!=0)
+        {
+            Random rnd = new();
+
+            var intent = Enum.GetValues<ToastIntent>()[rnd.Next(10)];
+            var message = $"{response.Message}";
+            msg=$"{response.Message}";
+            ToastService.ShowToast(intent, message);
+            progressValue=0;
+        }
+        else
+        {
+            Random rnd = new();
+
+            var intent = Enum.GetValues<ToastIntent>()[rnd.Next(10)];
+            var message = $"已完成";
+            msg="已完成";
+            ToastService.ShowToast(intent, message);
+            progressValue=0;
+        }
+    }
+}
+

@@ -1,0 +1,13 @@
+F:\.NET Practice\11_30\Gateway\obj\Release\net8.0\PubTmp\Out\Gateway.exe
+F:\.NET Practice\11_30\Gateway\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+F:\.NET Practice\11_30\Gateway\obj\Release\net8.0\PubTmp\Out\appsettings.json
+F:\.NET Practice\11_30\Gateway\obj\Release\net8.0\PubTmp\Out\Gateway.dll
+F:\.NET Practice\11_30\Gateway\obj\Release\net8.0\PubTmp\Out\Gateway.deps.json
+F:\.NET Practice\11_30\Gateway\obj\Release\net8.0\PubTmp\Out\Gateway.runtimeconfig.json
+F:\.NET Practice\11_30\Gateway\obj\Release\net8.0\PubTmp\Out\Gateway.pdb
+F:\.NET Practice\11_30\Gateway\obj\Release\net8.0\PubTmp\Out\Microsoft.OpenApi.dll
+F:\.NET Practice\11_30\Gateway\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+F:\.NET Practice\11_30\Gateway\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\.NET Practice\11_30\Gateway\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\.NET Practice\11_30\Gateway\obj\Release\net8.0\PubTmp\Out\System.IO.Hashing.dll
+F:\.NET Practice\11_30\Gateway\obj\Release\net8.0\PubTmp\Out\Yarp.ReverseProxy.dll

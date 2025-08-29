@@ -1,0 +1,78 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "EjiaService.WebAPI",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/yunzhijia": {
+      "post": {
+        "tags": [
+          "yunzhijia"
+        ],
+        "parameters": [
+          {
+            "name": "sysCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "message",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "yunzhijia"
+        ],
+        "parameters": [
+          {
+            "name": "sysCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "message",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

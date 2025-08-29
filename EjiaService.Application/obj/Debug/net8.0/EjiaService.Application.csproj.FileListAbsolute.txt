@@ -1,0 +1,16 @@
+F:\.NET Practice\11_30\EjiaService.Application\obj\Debug\net8.0\EjiaService.Application.csproj.AssemblyReference.cache
+F:\.NET Practice\11_30\EjiaService.Application\obj\Debug\net8.0\EjiaService.Application.GeneratedMSBuildEditorConfig.editorconfig
+F:\.NET Practice\11_30\EjiaService.Application\obj\Debug\net8.0\EjiaService.Application.AssemblyInfoInputs.cache
+F:\.NET Practice\11_30\EjiaService.Application\obj\Debug\net8.0\EjiaService.Application.AssemblyInfo.cs
+F:\.NET Practice\11_30\EjiaService.Application\obj\Debug\net8.0\EjiaService.Application.csproj.CoreCompileInputs.cache
+F:\.NET Practice\11_30\EjiaService.Application\obj\Debug\net8.0\EjiaService.Application.sourcelink.json
+F:\.NET Practice\11_30\EjiaService.Application\bin\Debug\net8.0\EjiaService.Application.deps.json
+F:\.NET Practice\11_30\EjiaService.Application\bin\Debug\net8.0\EjiaService.Application.dll
+F:\.NET Practice\11_30\EjiaService.Application\bin\Debug\net8.0\EjiaService.Application.pdb
+F:\.NET Practice\11_30\EjiaService.Application\bin\Debug\net8.0\EventBus.dll
+F:\.NET Practice\11_30\EjiaService.Application\bin\Debug\net8.0\EventBus.pdb
+F:\.NET Practice\11_30\EjiaService.Application\obj\Debug\net8.0\EjiaServ.B2501242.Up2Date
+F:\.NET Practice\11_30\EjiaService.Application\obj\Debug\net8.0\EjiaService.Application.dll
+F:\.NET Practice\11_30\EjiaService.Application\obj\Debug\net8.0\refint\EjiaService.Application.dll
+F:\.NET Practice\11_30\EjiaService.Application\obj\Debug\net8.0\EjiaService.Application.pdb
+F:\.NET Practice\11_30\EjiaService.Application\obj\Debug\net8.0\ref\EjiaService.Application.dll

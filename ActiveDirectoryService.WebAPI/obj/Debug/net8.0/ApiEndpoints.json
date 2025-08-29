@@ -1,0 +1,80 @@
+[
+  {
+    "ContainingType": "ActiveDirectoryService.WebAPI.Controllers.AuthController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Auth/ChangePassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "changePasswordRequest",
+        "Type": "ActiveDirectoryService.Application.Dtos.ChangePasswordRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CommonDtos.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ActiveDirectoryService.WebAPI.Controllers.AuthController",
+    "Method": "ChangePasswordByCapchaAsync",
+    "RelativePath": "api/Auth/ChangePasswordByCapcha",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "validateRequestDto",
+        "Type": "ActiveDirectoryService.Application.Dtos.ValidateRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CommonDtos.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ActiveDirectoryService.WebAPI.Controllers.AuthController",
+    "Method": "SendCapcha",
+    "RelativePath": "api/Auth/SendCapcha",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "forgotPasswordRequestDto",
+        "Type": "ActiveDirectoryService.Application.Dtos.ForgotPasswordRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CommonDtos.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

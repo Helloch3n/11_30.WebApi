@@ -1,0 +1,12 @@
+F:\.NET Practice\11_30\ActiveDirectoryService.Domai\bin\Release\net8.0\ActiveDirectoryService.Domain.deps.json
+F:\.NET Practice\11_30\ActiveDirectoryService.Domai\bin\Release\net8.0\ActiveDirectoryService.Domain.dll
+F:\.NET Practice\11_30\ActiveDirectoryService.Domai\bin\Release\net8.0\ActiveDirectoryService.Domain.pdb
+F:\.NET Practice\11_30\ActiveDirectoryService.Domai\obj\Release\net8.0\ActiveDirectoryService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\.NET Practice\11_30\ActiveDirectoryService.Domai\obj\Release\net8.0\ActiveDirectoryService.Domain.AssemblyInfoInputs.cache
+F:\.NET Practice\11_30\ActiveDirectoryService.Domai\obj\Release\net8.0\ActiveDirectoryService.Domain.AssemblyInfo.cs
+F:\.NET Practice\11_30\ActiveDirectoryService.Domai\obj\Release\net8.0\ActiveDirectoryService.Domain.csproj.CoreCompileInputs.cache
+F:\.NET Practice\11_30\ActiveDirectoryService.Domai\obj\Release\net8.0\ActiveDirectoryService.Domain.sourcelink.json
+F:\.NET Practice\11_30\ActiveDirectoryService.Domai\obj\Release\net8.0\ActiveDirectoryService.Domain.dll
+F:\.NET Practice\11_30\ActiveDirectoryService.Domai\obj\Release\net8.0\refint\ActiveDirectoryService.Domain.dll
+F:\.NET Practice\11_30\ActiveDirectoryService.Domai\obj\Release\net8.0\ActiveDirectoryService.Domain.pdb
+F:\.NET Practice\11_30\ActiveDirectoryService.Domai\obj\Release\net8.0\ref\ActiveDirectoryService.Domain.dll

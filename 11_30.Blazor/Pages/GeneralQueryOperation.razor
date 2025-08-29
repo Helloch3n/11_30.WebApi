@@ -1,0 +1,162 @@
+﻿@page "/generalQueryOperation"
+@using Microsoft.FluentUI.AspNetCore.Components
+@rendermode InteractiveServer
+@inject HttpClient Http
+@inject IDialogService DialogService
+
+
+
+<FluentMultiSplitter Style="height: 100%;" OnResize="@OnResizeHandler">
+
+    <FluentMultiSplitterPane Size="20%" Min="50px" Max="70%">
+        <div style="height: 100%;width:100%;overflow-y: auto;">
+            <FluentButton Hidden="@(!IsDisplayButton)" Appearance="Appearance.Accent">修改</FluentButton>
+            <FluentButton Hidden="@(!IsDisplayButton)">删除</FluentButton>
+            @* <FluentListbox Items=@queryTypes
+                       OptionText="@(i => i.Name)"
+                       OptionValue="@(i =>i.Id.ToString())"
+                       OptionSelected="@(i => i.Selected)"
+                       @bind-Value="@typeId"
+                       @onclick="() => LoadQueryActionAsync(Guid.Parse(typeId))" /> *@
+            <FluentListbox TItem="QueryType" Items="@queryTypes" OptionValue="@(i =>i.Id.ToString())" @bind-Value="@typeId" @onclick="() => LoadQueryActionAsync(Guid.Parse(typeId))">
+                <OptionTemplate Context="item">
+                    <div class="copyable-option">@item.Name</div>
+                </OptionTemplate>
+            </FluentListbox>
+        </div>
+    </FluentMultiSplitterPane>
+
+
+    <FluentMultiSplitterPane Size="40%">
+        <div style="height: 100%;width:100%;overflow-y: auto;">
+            <FluentMultiSplitter OnResize="@OnResizeHandler" OnExpand="@OnCollapseExpand" OnCollapse="@OnCollapseExpand" Orientation="Orientation.Vertical">
+                <FluentMultiSplitterPane Collapsible="true">
+                    <FluentButton Hidden="@(!IsDisplayButton)" Appearance="Appearance.Accent" OnClick="@AddActionAsync">添加</FluentButton>
+                    <FluentButton Hidden="@(!IsDisplayButton)">删除</FluentButton>
+                    <FluentListbox TItem="QueryAction" Items="@queryActions" OptionValue="@(i =>i.Id.ToString())" @bind-Value="@actionId" @onclick="OnActionClicked">
+                        <OptionTemplate Context="item">
+                            <div class="copyable-option">@item.Name---@item.Description</div>
+                        </OptionTemplate>
+                    </FluentListbox>
+                </FluentMultiSplitterPane>
+            </FluentMultiSplitter>
+        </div>
+    </FluentMultiSplitterPane>
+
+
+    <FluentMultiSplitterPane Size="40%">
+        <div style="height: 100%;width:100%;overflow-y: auto;">
+            <FluentButton Hidden="@(!IsDisplayButton)" Appearance="Appearance.Accent" OnClick="@AddFieldAsync">添加</FluentButton>
+            <FluentButton Hidden="@(!IsDisplayButton)">删除</FluentButton>
+            <FluentListbox TItem="QueryField" Items="@queryFields" SelectedValue="@selectedField">
+                <OptionTemplate Context="item">
+                    <div class="copyable-option">@item.Name---@item.Description</div>
+                </OptionTemplate>
+            </FluentListbox>
+        </div>
+    </FluentMultiSplitterPane>
+
+</FluentMultiSplitter>
+
+@code
+{
+    [Parameter]
+    public bool IsDisplayButton { get; set; } = true;
+    string errorMessage = string.Empty;
+    bool isLoading = false;
+    string? stringValue;
+    private QueryType? selectedType;
+    private QueryAction? selectedAction;
+    private QueryField? selectedField;
+    string actionId;
+    public string typeId;
+    List<QueryType> queryTypes = new();
+    List<QueryField> queryFields = new();
+    List<QueryAction> queryActions = new();
+
+    void OnResizeHandler(FluentMultiSplitterResizeEventArgs e)
+    {
+
+    }
+
+    void OnCollapseExpand(FluentMultiSplitterEventArgs e)
+    {
+        bool willCollapse = !e.Pane.Collapsed;
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        queryTypes=await LoadQueryTypeAsync();
+        selectedType=queryTypes[0];
+        await InvokeAsync(StateHasChanged);
+    }
+
+    public async Task<List<QueryType>> LoadQueryTypeAsync()
+    {
+        var respones = await Http.GetFromJsonAsync<List<QueryType>>("11_30/GeneralQueryOption/GetGeneralQueryTypes");
+        return respones;
+    }
+
+    public async Task LoadQueryFieldAsync(Guid actionId)
+    {
+        queryFields = await Http.GetFromJsonAsync<List<QueryField>>($"11_30/GeneralQueryOption/GetGeneralQueryFields?actionId={actionId}");
+        await InvokeAsync(StateHasChanged);
+
+    }
+
+    public async Task LoadQueryActionAsync(Guid typeId)
+    {
+        queryActions = await Http.GetFromJsonAsync<List<QueryAction>>($"11_30/GeneralQueryOption/GetGeneralQueryActions?typeId={typeId}");
+        await InvokeAsync(StateHasChanged);
+    }
+
+
+    private async Task AddActionAsync()
+    {
+        QueryAction DialogData = new() { Name = string.Empty, Description = string.Empty, GeneralQueryTypeId =Guid.Parse(typeId) };
+        var dialog = await DialogService.ShowDialogAsync(DialogHelper.From<AddQueryActionDialog>(), DialogData, new DialogParameters()
+            {
+                Height = "400px",
+                Title = $"通用查询表名添加",
+                PreventDismissOnOverlayClick = true,
+                PreventScroll = true,
+            });
+
+        var result = await dialog.Result;
+        if (!result.Cancelled && result.Data != null)
+        {
+            DialogData = (QueryAction)result.Data;
+        }
+    }
+
+    private async Task AddFieldAsync()
+    {
+        QueryField DialogData = new() { Name = string.Empty, Description = string.Empty, GeneralQueryActionId =Guid.Parse(actionId) };
+        var dialog = await DialogService.ShowDialogAsync(DialogHelper.From<AddQueryFieldDialog>(), DialogData, new DialogParameters()
+            {
+                Height = "400px",
+                Title = $"通用查询字段添加",
+                PreventDismissOnOverlayClick = true,
+                PreventScroll = true,
+            });
+
+        var result = await dialog.Result;
+        if (!result.Cancelled && result.Data != null)
+        {
+            DialogData = (QueryField)result.Data;
+        }
+    }
+
+    private async Task OnActionClicked()
+    {
+        if (!string.IsNullOrEmpty(actionId) && Guid.TryParse(actionId, out var guid))
+        {
+            await LoadQueryFieldAsync(guid);
+        }
+        else
+        {
+            // actionId 为空或格式错误时的处理，比如忽略或者提示
+        }
+    }
+}

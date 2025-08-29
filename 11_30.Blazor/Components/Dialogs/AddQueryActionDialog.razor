@@ -1,0 +1,93 @@
+﻿@using System.ComponentModel.DataAnnotations
+@implements IDialogContentComponent<QueryAction>
+@using Services
+@inject QueryApiService QueryApiService
+
+<!-- Header -->
+<FluentDialogHeader ShowDismiss="true">
+    <FluentStack VerticalAlignment="VerticalAlignment.Center">
+        <FluentIcon Value="@(new Icons.Regular.Size24.WindowApps())" />
+        <FluentLabel Typo="Typography.PaneHeader">
+            @Dialog.Instance.Parameters.Title
+        </FluentLabel>
+    </FluentStack>
+</FluentDialogHeader>
+
+<!-- Body -->
+<FluentDialogBody>
+    <EditForm EditContext="@_editContext" FormName="simple_register">
+        <DataAnnotationsValidator />
+
+        <FluentLabel Style="margin-bottom: 16px;">
+            请添加表名和中文描述
+        </FluentLabel>
+
+        <FluentTextField Name="register_name"
+                         @bind-Value="@Content.Name"
+                         Label="表名"
+                         Required />
+        <FluentTextField Name="register_name"
+                         @bind-Value="@Content.Description"
+                         Label="描述"
+                         Required />
+        @* <FluentNumberField Name="register_age"
+                           @bind-Value="@Content.Age"
+                           Label="Age"
+                           Required /> *@
+
+        <div style="color: var(--error);">
+            <FluentValidationSummary />
+        </div>
+    </EditForm>
+</FluentDialogBody>
+
+<!-- Footer -->
+<FluentDialogFooter>
+    <FluentButton Appearance="Appearance.Accent"
+                  Disabled="@(!_editContext.Validate())"
+                  OnClick="@SaveAsync">
+        Save
+    </FluentButton>
+    <FluentButton Appearance="Appearance.Neutral"
+                  OnClick="@CancelAsync">
+        Cancel
+    </FluentButton>
+</FluentDialogFooter>
+
+@code
+{
+
+
+
+
+
+
+
+    private EditContext _editContext = default!;
+
+    [CascadingParameter]
+    public FluentDialog Dialog { get; set; } = default!;
+
+    [Parameter]
+    public QueryAction Content { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+        _editContext = new EditContext(Content);
+    }
+
+    private async Task SaveAsync()
+    {
+        if (_editContext.Validate())
+        {
+
+            await QueryApiService.AddQueryActionAsync(Content);
+            await Dialog.CloseAsync(Content);
+        }
+    }
+
+    private async Task CancelAsync()
+    {
+        await Dialog.CancelAsync();
+    }
+}

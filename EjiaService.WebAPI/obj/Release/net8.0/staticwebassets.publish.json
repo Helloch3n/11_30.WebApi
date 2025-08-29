@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Syxbb3m8k/o6fs8avlBso8SblRJHaYcUs9aCm3w1msA=",
+  "Source": "EjiaService.WebAPI",
+  "BasePath": "_content/EjiaService.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

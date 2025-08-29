@@ -1,0 +1,216 @@
+[
+  {
+    "ContainingType": "_11_30.WebApi.Controllers.EJiaController",
+    "Method": "EJiaAutoNewsAsync",
+    "RelativePath": "api/EJia/EJiaAutoNews",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eJiaDto",
+        "Type": "_11_30.Application.Dtos.EJiaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "_11_30.Application.Dtos.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "_11_30.WebApi.Controllers.GeneralQueryController",
+    "Method": "ErpQueryAsync",
+    "RelativePath": "api/GeneralQuery/ErpQuery",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "apiResponse",
+        "Type": "_11_30.Application.Dtos.ApiResponse\u00601[[_11_30.Application.Dtos.ErpQueryDto, 11_30.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "_11_30.Application.Dtos.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[System.Collections.Generic.Dictionary\u00602[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "_11_30.WebApi.Controllers.GeneralQueryController",
+    "Method": "ExportToExcelAsync",
+    "RelativePath": "api/GeneralQuery/ExportToExcel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rows",
+        "Type": "System.Collections.Generic.List\u00601[[System.Collections.Generic.Dictionary\u00602[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "_11_30.WebApi.Controllers.GeneralQueryOptionController",
+    "Method": "AddGeneralFieldActionAsync",
+    "RelativePath": "api/GeneralQueryOption/AddGeneralFieldAction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "generalQueryFieldDto",
+        "Type": "_11_30.Application.Dtos.GeneralQueryFieldDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "_11_30.WebApi.Controllers.GeneralQueryOptionController",
+    "Method": "AddGeneralQueryActionAsync",
+    "RelativePath": "api/GeneralQueryOption/AddGeneralQueryAction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "generalQueryActionDto",
+        "Type": "_11_30.Application.Dtos.GeneralQueryActionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "_11_30.WebApi.Controllers.GeneralQueryOptionController",
+    "Method": "GetGeneralQueryActionsAsync",
+    "RelativePath": "api/GeneralQueryOption/GetGeneralQueryActions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "typeId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[_11_30.Application.Dtos.GeneralQueryActionDto, 11_30.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "_11_30.WebApi.Controllers.GeneralQueryOptionController",
+    "Method": "GetGeneralQueryFieldsAsync",
+    "RelativePath": "api/GeneralQueryOption/GetGeneralQueryFields",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "actionId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[_11_30.Application.Dtos.GeneralQueryFieldDto, 11_30.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "_11_30.WebApi.Controllers.GeneralQueryOptionController",
+    "Method": "GetGeneralQueryTypesAsync",
+    "RelativePath": "api/GeneralQueryOption/GetGeneralQueryTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[_11_30.Application.Dtos.GeneralQueryTypeDto, 11_30.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "_11_30.WebApi.Controllers.LxController",
+    "Method": "AutoAnswersAsync",
+    "RelativePath": "api/Lx/AutoAnswers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "_11_30.WebApi.Controllers.QuestionBankController",
+    "Method": "GetQuestionBanks",
+    "RelativePath": "api/QuestionBank/GetQuestionBanks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[_11_30.Application.Dtos.QuestionBankDto, 11_30.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

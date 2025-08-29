@@ -1,0 +1,13 @@
+F:\.NET Practice\11_30\EventBus\bin\Release\net8.0\EventBus.deps.json
+F:\.NET Practice\11_30\EventBus\bin\Release\net8.0\EventBus.dll
+F:\.NET Practice\11_30\EventBus\bin\Release\net8.0\EventBus.pdb
+F:\.NET Practice\11_30\EventBus\obj\Release\net8.0\EventBus.csproj.AssemblyReference.cache
+F:\.NET Practice\11_30\EventBus\obj\Release\net8.0\EventBus.GeneratedMSBuildEditorConfig.editorconfig
+F:\.NET Practice\11_30\EventBus\obj\Release\net8.0\EventBus.AssemblyInfoInputs.cache
+F:\.NET Practice\11_30\EventBus\obj\Release\net8.0\EventBus.AssemblyInfo.cs
+F:\.NET Practice\11_30\EventBus\obj\Release\net8.0\EventBus.csproj.CoreCompileInputs.cache
+F:\.NET Practice\11_30\EventBus\obj\Release\net8.0\EventBus.sourcelink.json
+F:\.NET Practice\11_30\EventBus\obj\Release\net8.0\EventBus.dll
+F:\.NET Practice\11_30\EventBus\obj\Release\net8.0\refint\EventBus.dll
+F:\.NET Practice\11_30\EventBus\obj\Release\net8.0\EventBus.pdb
+F:\.NET Practice\11_30\EventBus\obj\Release\net8.0\ref\EventBus.dll

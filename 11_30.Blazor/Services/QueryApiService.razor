@@ -1,0 +1,88 @@
+﻿@inject HttpClient Http
+@using System.Data
+@using Microsoft.JSInterop;
+
+
+
+@code {
+    private readonly HttpClient _http;
+    private readonly IJSRuntime _jsRuntime;
+
+    public QueryApiService(HttpClient http, IJSRuntime jsRuntime)
+    {
+        _http = http;
+        _jsRuntime = jsRuntime ?? throw new ArgumentNullException(nameof(jsRuntime));
+    }
+    public async Task AddQueryActionAsync(QueryAction queryAction)
+    {
+        var response = await _http.PostAsJsonAsync($"11_30/GeneralQueryOption/AddGeneralQueryAction", queryAction);
+        if (response.IsSuccessStatusCode)
+        {
+            // 成功处理
+            Console.WriteLine("提交成功");
+        }
+        else
+        {
+            // 错误处理
+            Console.WriteLine($"错误：{response.StatusCode}");
+        }
+    }
+
+    public async Task AddQueryFieldAsync(QueryField queryAction)
+    {
+        var response = await _http.PostAsJsonAsync($"11_30/GeneralQueryOption/AddGeneralFieldAction", queryAction);
+        if (response.IsSuccessStatusCode)
+        {
+            // 成功处理
+            Console.WriteLine("提交成功");
+        }
+        else
+        {
+            // 错误处理
+            Console.WriteLine($"错误：{response.StatusCode}");
+        }
+    }
+
+    public async Task<List<Dictionary<string, object>>> GetDataTableFromApi(EepQueryDto erpQuery)
+    {
+        ApiResponse<EepQueryDto> queryAction = new() { Data=erpQuery };
+        try
+        {
+            var respones = await _http.PostAsJsonAsync("11_30/GeneralQuery/ErpQuery", queryAction);
+            var result = await respones.Content.ReadFromJsonAsync<ApiResponse<List<Dictionary<string, object>>>>();
+            return result.Data;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            return new List<Dictionary<string, object>>();
+        }
+    }
+
+
+
+    [Inject] private IJSRuntime JS { get; set; } = default!;
+    public async Task ExportExcel(List<DataGridItem> dataItems)
+    {
+        if (dataItems!=null || dataItems.Count!=0)
+        {
+            // 将 DataGrid 数据转为 List<Dictionary<string, object>>
+            var rows = dataItems.Select(item => item.Values).ToList();
+
+            var response = await _http.PostAsJsonAsync("11_30/GeneralQuery/ExportToExcel", rows);
+            var content = await response.Content.ReadAsByteArrayAsync();
+
+            var fileName = "export.xlsx";
+            if (response.Content.Headers.ContentDisposition != null)
+            {
+                fileName = response.Content.Headers.ContentDisposition.FileNameStar ??
+                           response.Content.Headers.ContentDisposition.FileName ??
+                           fileName;
+
+                // 去除引号
+                fileName = fileName.Trim('"');
+            }
+            await _jsRuntime.InvokeVoidAsync("downloadFile", fileName, content);
+        }
+    }
+}

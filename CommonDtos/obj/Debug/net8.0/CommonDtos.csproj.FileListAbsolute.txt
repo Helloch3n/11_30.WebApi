@@ -1,0 +1,12 @@
+F:\.NET Practice\11_30\CommonDtos\bin\Debug\net8.0\CommonDtos.deps.json
+F:\.NET Practice\11_30\CommonDtos\bin\Debug\net8.0\CommonDtos.dll
+F:\.NET Practice\11_30\CommonDtos\bin\Debug\net8.0\CommonDtos.pdb
+F:\.NET Practice\11_30\CommonDtos\obj\Debug\net8.0\CommonDtos.GeneratedMSBuildEditorConfig.editorconfig
+F:\.NET Practice\11_30\CommonDtos\obj\Debug\net8.0\CommonDtos.AssemblyInfoInputs.cache
+F:\.NET Practice\11_30\CommonDtos\obj\Debug\net8.0\CommonDtos.AssemblyInfo.cs
+F:\.NET Practice\11_30\CommonDtos\obj\Debug\net8.0\CommonDtos.csproj.CoreCompileInputs.cache
+F:\.NET Practice\11_30\CommonDtos\obj\Debug\net8.0\CommonDtos.sourcelink.json
+F:\.NET Practice\11_30\CommonDtos\obj\Debug\net8.0\CommonDtos.dll
+F:\.NET Practice\11_30\CommonDtos\obj\Debug\net8.0\refint\CommonDtos.dll
+F:\.NET Practice\11_30\CommonDtos\obj\Debug\net8.0\CommonDtos.pdb
+F:\.NET Practice\11_30\CommonDtos\obj\Debug\net8.0\ref\CommonDtos.dll

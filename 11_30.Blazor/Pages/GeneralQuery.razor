@@ -1,0 +1,141 @@
+﻿@page "/generalQuery"
+@rendermode InteractiveServer
+@using Microsoft.FluentUI.AspNetCore.Components
+@using Microsoft.FluentUI.AspNetCore.Components.Utilities
+@using System.Data
+@using System.Dynamic
+@inject HttpClient Http
+@inject QueryApiService QueryApiService
+
+
+
+<FluentStack Style="margin-bottom: 24px;" VerticalAlignment="VerticalAlignment.Center">
+    <FluentLabel>服务</FluentLabel>
+    <FluentSelect Items=@options
+                  OptionText="@(i => i.Text)"
+                  OptionValue="@(i => i.Value)"
+                  OptionSelected="@(i => i.Selected)"
+                  @bind-Value="@stringValue" />
+    <FluentButton OnClick="@LoadData" Appearance="Appearance.Accent">查询</FluentButton>
+</FluentStack>
+
+<FluentGrid Spacing="20" AdaptiveRendering="true" Style="background-color: var(--neutral-layer-3); padding: 4px;">
+    <FluentGridItem xs="12" sm="6" HiddenWhen="GridItemHidden.SmAndDown">
+        @*    <FluentLabel>数据表</FluentLabel> *@
+        <p>
+            数据表：
+            <FluentSelect Items=@options
+                          OptionText="@(i => i.Text)"
+                          OptionValue="@(i => i.Value)"
+                          OptionSelected="@(i => i.Selected)"
+                          @bind-Value="@stringValue" />
+        </p>
+    </FluentGridItem>
+
+    <FluentGridItem xs="12" Style="height:350px">
+        <FluentMultiSplitter>
+            <FluentMultiSplitterPane>
+                <p>字段: <FluentTextArea @bind-Value=columns AriaLabel="Without label" Style="width: 80%"></FluentTextArea></p>
+                <p>表名: <FluentTextArea @bind-Value=table AriaLabel="Without label" Style="width: 80%"></FluentTextArea></p>
+                <p>条件: <FluentTextArea @bind-Value=filter AriaLabel="Without label" Style="width: 80%" Maxlength="300"></FluentTextArea></p>
+                <p>排序: <FluentTextArea @bind-Value=orderby AriaLabel="Without label" Style="width: 80%"></FluentTextArea></p>
+            </FluentMultiSplitterPane>
+            <FluentMultiSplitterPane>
+                <!-- 加载表、字段列表 -->
+                <GeneralQueryOperation IsDisplayButton=false />
+            </FluentMultiSplitterPane>
+        </FluentMultiSplitter>
+    </FluentGridItem>
+
+    <FluentGridItem xs="12">
+        <FluentStack>
+            <FluentButton OnClick="()=>QueryApiService.ExportExcel(DataItems)" Appearance="Appearance.Accent">导出</FluentButton>
+        </FluentStack>
+        <p>查询结果：</p>
+        @if (isLoading)
+        {
+            <p>加载中，请稍候...</p>
+        }
+        else if (DataItems != null && ColumnNames?.Count > 0)
+        {
+            <p>数据加载成功，共 @DataItems.Count 条记录。</p>
+            <div class="scroll-wrapper" style="height: 434px; width: 100%; overflow:auto;" tabindex="-1">
+                <FluentDataGrid TGridItem="DataGridItem"
+                                DisplayMode="DataGridDisplayMode.Table"
+                                ItemSize="46"
+                                GenerateHeader="GenerateHeaderOption.Sticky"
+                                Items="@(DataItems?.AsQueryable() ?? Enumerable.Empty<DataGridItem>().AsQueryable())"
+                                Virtualize="false">
+
+                    <!-- 动态生成列 -->
+                    @if (ColumnNames != null)
+                    {
+                        @foreach (var column in ColumnNames)
+                        {
+                            <PropertyColumn Title="@column"
+                                            Property="@(item => item[column]??"[空]")"
+                                            Style="min-width: 220px; max-width: 400px; white-space: nowrap;"
+                                            Sortable="false" />
+                        }
+                    }
+                </FluentDataGrid>
+            </div>
+        }
+    </FluentGridItem>
+</FluentGrid>
+
+
+@code
+{
+    string? table, filter, orderby, columns;
+    string? stringValue;
+    static List<Option<string>> options = new()
+    {
+        { new Option<string> { Value = "7", Text = "ERP" } },
+    };
+
+    // 数据状态
+    private List<Dictionary<string, object>> Data;
+    private List<DataGridItem>? DataItems;
+    private List<string> ColumnNames;
+
+    // UI 状态
+    private bool isLoading = false;
+    private string? errorMessage;
+
+    //组件初始化时调用
+    protected override async Task OnInitializedAsync()
+    {
+
+    }
+
+    // 从API加载数据
+    private async Task LoadData()
+    {
+        try
+        {
+            DataItems = new();
+            isLoading = true;
+            errorMessage = null;
+
+            // 强制先刷新 UI（让用户看到“加载中...”）
+            await InvokeAsync(StateHasChanged);
+            EepQueryDto erpQuery = new(Table: table??"", Filter: filter??"", Orderby: orderby??"", Columns: columns??"");
+            // 从API获取DataTable
+            Data = await QueryApiService.GetDataTableFromApi(erpQuery);
+            // 获取表格列
+            ColumnNames=Data.FirstOrDefault().Keys.ToList();
+            // 获取表格行
+            DataItems=Data.Select(row => new DataGridItem { Values = row }).ToList();
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"加载数据失败: {ex.Message}";
+        }
+        finally
+        {
+            isLoading = false;
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+}

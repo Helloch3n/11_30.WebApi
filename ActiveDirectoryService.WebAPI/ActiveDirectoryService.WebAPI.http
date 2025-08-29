@@ -1,0 +1,6 @@
+@ActiveDirectoryService.WebAPI_HostAddress = http://localhost:5242
+
+GET {{ActiveDirectoryService.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

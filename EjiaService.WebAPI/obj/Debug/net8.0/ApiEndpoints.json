@@ -1,0 +1,54 @@
+[
+  {
+    "ContainingType": "EjiaService.WebAPI.Controllers.yunzhijiaController",
+    "Method": "Post",
+    "RelativePath": "api/yunzhijia",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sysCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "userCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "message",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EjiaService.WebAPI.Controllers.yunzhijiaController",
+    "Method": "Post",
+    "RelativePath": "api/yunzhijia",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sysCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "userCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "message",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

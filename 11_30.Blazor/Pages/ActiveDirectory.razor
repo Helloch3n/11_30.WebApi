@@ -1,0 +1,100 @@
+﻿@page "/ActiveDirectory"
+@rendermode InteractiveServer
+@inject ActiveDirectoryApiService ActiveDirectoryApiService
+@inject IToastService ToastService
+
+<h3>域控服务</h3>
+<FluentStack Orientation="Orientation.Vertical"
+             HorizontalAlignment="HorizontalAlignment.Center"
+             VerticalAlignment="VerticalAlignment.Center"
+             Style="height:100vh; width:100%; max-width:400px; margin:auto; gap:44px; padding:20px;">
+
+    <!-- 用户名行 -->
+    <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Stretch" Gap="10px">
+        <FluentTextField Label="用户名"
+                         Placeholder="请输入用户名"
+                         @bind-Value="UserName"
+                         Required
+                         Style="flex:1;max-width:75%;" />
+    </FluentStack>
+
+    <!-- 旧密码行 -->
+    <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Stretch" Gap="10px">
+        <FluentTextField Label="旧密码"
+                         Placeholder="请输入旧密码"
+                         @bind-Value="OldPassword"
+                         TextFieldType="@passwordFieldType1"
+                         CanRevealPassword
+                         Required
+                         Style="flex:1;max-width:75%;" />
+        <FluentEmoji Value="@CurrentEmoji1" Width="16px" @onclick="TogglePasswordVisibility1" />
+    </FluentStack>
+
+    <!-- 新密码行 -->
+    <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Stretch" Gap="10px">
+        <FluentTextField Label="新密码"
+                         Placeholder="请输入新密码"
+                         @bind-Value="NewPassword"
+                         TextFieldType="@passwordFieldType"
+                         CanRevealPassword
+                         Required
+                         Style="flex:1;max-width:75%;" />
+        <FluentEmoji Value="@CurrentEmoji" Width="16px" @onclick="TogglePasswordVisibility" />
+    </FluentStack>
+
+    <!-- 按钮行 -->
+    <FluentButton Appearance="Appearance.Accent"
+                  OnClick="ChangePassword"
+                  Style="margin-top:10px;">
+        修改密码
+    </FluentButton>
+</FluentStack>
+
+@code {
+    private string UserName { get; set; } = string.Empty;
+    private string OldPassword { get; set; } = string.Empty;
+    private string NewPassword { get; set; } = string.Empty;
+    private TextFieldType passwordFieldType1 = TextFieldType.Password;
+    private TextFieldType passwordFieldType = TextFieldType.Password;
+    private string msg = string.Empty;
+
+    private Emoji CurrentEmoji => passwordFieldType == TextFieldType.Password
+        ? new Emojis.SmileysEmotion.Color.Default.FaceWithPeekingEye()
+        : new Emojis.SmileysEmotion.Color.Default.FaceWithOpenEyesAndHandOverMouth();
+
+    private Emoji CurrentEmoji1 => passwordFieldType1 == TextFieldType.Password
+    ? new Emojis.SmileysEmotion.Color.Default.FaceWithPeekingEye()
+    : new Emojis.SmileysEmotion.Color.Default.FaceWithOpenEyesAndHandOverMouth();
+
+    private void TogglePasswordVisibility()
+    {
+        passwordFieldType = passwordFieldType == TextFieldType.Password ? TextFieldType.Text : TextFieldType.Password;
+    }
+
+    private void TogglePasswordVisibility1()
+    {
+        passwordFieldType1 = passwordFieldType1 == TextFieldType.Password ? TextFieldType.Text : TextFieldType.Password;
+    }
+
+    public async Task ChangePassword()
+    {
+        var dto = new ChangePasswordRequestDto(UserName, OldPassword, NewPassword)
+            {
+                UserName=UserName,
+                NewPassword=NewPassword,
+                OldPassword=OldPassword
+            };
+        ApiResponse response = await ActiveDirectoryApiService.ChangePasswordAsync(dto);
+        if (response.Code==0)
+        {
+            UserName=string.Empty;
+            NewPassword=string.Empty;
+            OldPassword=string.Empty;
+            ToastService.ShowSuccess(response.Message);
+        }
+        else
+        {
+            ToastService.ShowError(response.Message);
+        }
+    }
+}

@@ -1,0 +1,3 @@
+wwwroot\app.css
+wwwroot\favicon.ico
+wwwroot\js\download.js

@@ -1,0 +1,25 @@
+﻿@inject HttpClient Http
+@using System.Data
+@using Microsoft.JSInterop;
+
+
+@code {
+    private readonly HttpClient _http;
+
+
+    public ActiveDirectoryApiService(HttpClient http)
+    {
+        _http = http;
+    }
+
+    public async Task<ApiResponse> ChangePasswordAsync(ChangePasswordRequestDto apiResponse)
+    {
+        var response = await _http.PostAsJsonAsync($"AD/Auth/ChangePassword", apiResponse);
+        if (response.IsSuccessStatusCode)
+        {
+            var result = await response.Content.ReadFromJsonAsync<ApiResponse>();
+            return result;
+        }
+        return null;
+    }
+}

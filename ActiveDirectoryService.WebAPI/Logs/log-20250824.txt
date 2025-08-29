@@ -1,0 +1,280 @@
+[2025-08-24 09:26:06 INF] 应用启动成功
+[2025-08-24 09:26:08 INF] Now listening on: https://localhost:7144
+[2025-08-24 09:26:08 INF] Now listening on: http://localhost:5242
+[2025-08-24 09:26:08 INF] Application started. Press Ctrl+C to shut down.
+[2025-08-24 09:26:08 INF] Hosting environment: Development
+[2025-08-24 09:26:08 INF] Content root path: F:\.NET Practice\11_30\ActiveDirectoryService.WebAPI
+[2025-08-24 09:26:09 INF] Request starting HTTP/2 GET https://localhost:7144/swagger/index.html - null null
+[2025-08-24 09:26:09 INF] Request finished HTTP/2 GET https://localhost:7144/swagger/index.html - 200 null text/html;charset=utf-8 263.8714ms
+[2025-08-24 09:26:09 INF] Request starting HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - null null
+[2025-08-24 09:26:09 INF] Request finished HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - 200 16543 application/javascript; charset=utf-8 3.2868ms
+[2025-08-24 09:26:09 INF] Request starting HTTP/2 GET https://localhost:7144/_vs/browserLink - null null
+[2025-08-24 09:26:09 INF] Request finished HTTP/2 GET https://localhost:7144/_vs/browserLink - 200 null text/javascript; charset=UTF-8 202.0538ms
+[2025-08-24 09:26:10 INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - null null
+[2025-08-24 09:26:10 INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 7.3939ms
+[2025-08-24 09:27:01 INF] Request starting HTTP/2 POST https://localhost:7144/api/Auth/ChangePassword - application/json 80
+[2025-08-24 09:27:01 INF] Executing endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI)'
+[2025-08-24 09:27:01 INF] Route matched with {action = "ChangePassword", controller = "Auth"}. Executing controller action with signature CommonDtos.ApiResponse ChangePassword(ActiveDirectoryService.Application.Dtos.ChangePasswordRequestDto) on controller ActiveDirectoryService.WebAPI.Controllers.AuthController (ActiveDirectoryService.WebAPI).
+[2025-08-24 09:27:01 INF] RabbitMQ Client is trying to connect
+[2025-08-24 09:27:05 ERR] RabbitMQ broker unreachable
+RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable
+ ---> System.AggregateException: One or more errors occurred. (Connection failed)
+ ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed
+ ---> System.Net.Sockets.SocketException (10061): 由于目标计算机积极拒绝，无法连接。
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at RabbitMQ.Client.TcpClientAdapter.ConnectAsync(String host, Int32 port)
+   at RabbitMQ.Client.Impl.TaskExtensions.TimeoutAfter(Task task, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingIPv4(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.Framing.Impl.IProtocolExtensions.CreateFrameHandler(IProtocol protocol, AmqpTcpEndpoint endpoint, ArrayPool`1 pool, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.Framing.Impl.AutorecoveringConnection.Init(IEndpointResolver endpoints)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(String clientProvidedName)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection()
+   at EventBus.Implementation.DefaultRabbitMQPersistentConnection.TryConnect() in F:\.NET Practice\11_30\EventBus\Implementation\DefaultRabbitMQPersistentConnection.cs:line 56
+[2025-08-24 09:27:13 INF] Executed action ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI) in 12134.7899ms
+[2025-08-24 09:27:13 INF] Executed endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI)'
+[2025-08-24 09:27:13 ERR] An unhandled exception has occurred while executing the request.
+RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable
+ ---> System.AggregateException: One or more errors occurred. (Connection failed)
+ ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed
+ ---> System.Net.Sockets.SocketException (10061): 由于目标计算机积极拒绝，无法连接。
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at RabbitMQ.Client.TcpClientAdapter.ConnectAsync(String host, Int32 port)
+   at RabbitMQ.Client.Impl.TaskExtensions.TimeoutAfter(Task task, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingIPv4(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.Framing.Impl.IProtocolExtensions.CreateFrameHandler(IProtocol protocol, AmqpTcpEndpoint endpoint, ArrayPool`1 pool, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.Framing.Impl.AutorecoveringConnection.Init(IEndpointResolver endpoints)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(String clientProvidedName)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection()
+   at EventBus.Implementation.DefaultRabbitMQPersistentConnection.TryConnect() in F:\.NET Practice\11_30\EventBus\Implementation\DefaultRabbitMQPersistentConnection.cs:line 56
+   at EventBus.Implementation.EventBusRabbitMQ.TryCreateConsumerChannel() in F:\.NET Practice\11_30\EventBus\Implementation\EventBusRabbitMQ.cs:line 151
+   at EventBus.Implementation.EventBusRabbitMQ..ctor(DefaultRabbitMQPersistentConnection persistentConnection, IEventBusSubscriptionsManager subsManager, IServiceProvider serviceProvider, ILogger`1 logger, EventBusOptions options) in F:\.NET Practice\11_30\EventBus\Implementation\EventBusRabbitMQ.cs:line 36
+   at EventBus.Extensions.ServiceCollectionExtensions.<>c__DisplayClass0_0.<AddEventBusRabbitMQ>b__2(IServiceProvider sp) in F:\.NET Practice\11_30\EventBus\Extensions\ServiceCollectionExtensions.cs:line 54
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method6(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2025-08-24 09:27:13 INF] Request finished HTTP/2 POST https://localhost:7144/api/Auth/ChangePassword - 500 null text/plain; charset=utf-8 12202.5029ms
+[2025-08-24 09:29:18 INF] Request starting HTTP/2 POST https://localhost:7144/api/Auth/ChangePassword - application/json 80
+[2025-08-24 09:29:18 INF] Executing endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI)'
+[2025-08-24 09:29:18 INF] Route matched with {action = "ChangePassword", controller = "Auth"}. Executing controller action with signature CommonDtos.ApiResponse ChangePassword(ActiveDirectoryService.Application.Dtos.ChangePasswordRequestDto) on controller ActiveDirectoryService.WebAPI.Controllers.AuthController (ActiveDirectoryService.WebAPI).
+[2025-08-24 09:29:18 INF] RabbitMQ Client is trying to connect
+[2025-08-24 09:29:18 INF] RabbitMQ persistent connection acquired a connection
+[2025-08-24 09:29:18 INF] Executing action method ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI) - Validation state: "Valid"
+[2025-08-24 09:29:18 INF] 2025/8/24 9:29:18修改密出错： The supplied credential is invalid.
+[2025-08-24 09:29:18 INF] Executed action method ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 79.7187ms.
+[2025-08-24 09:29:18 INF] Executing ObjectResult, writing value of type 'CommonDtos.ApiResponse'.
+[2025-08-24 09:29:18 INF] Executed action ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI) in 267.2917ms
+[2025-08-24 09:29:18 INF] Executed endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI)'
+[2025-08-24 09:29:18 INF] Request finished HTTP/2 POST https://localhost:7144/api/Auth/ChangePassword - 200 null application/json; charset=utf-8 270.8203ms
+[2025-08-24 10:17:32 INF] 应用启动成功
+[2025-08-24 10:17:33 INF] Now listening on: https://localhost:7144
+[2025-08-24 10:17:33 INF] Now listening on: http://localhost:5242
+[2025-08-24 10:17:33 INF] Application started. Press Ctrl+C to shut down.
+[2025-08-24 10:17:33 INF] Hosting environment: Development
+[2025-08-24 10:17:33 INF] Content root path: F:\.NET Practice\11_30\ActiveDirectoryService.WebAPI
+[2025-08-24 10:17:34 INF] Request starting HTTP/2 GET https://localhost:7144/swagger/index.html - null null
+[2025-08-24 10:17:34 INF] Request finished HTTP/2 GET https://localhost:7144/swagger/index.html - 200 null text/html;charset=utf-8 209.3569ms
+[2025-08-24 10:17:34 INF] Request starting HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - null null
+[2025-08-24 10:17:34 INF] Request finished HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - 200 16543 application/javascript; charset=utf-8 3.5571ms
+[2025-08-24 10:17:34 INF] Request starting HTTP/2 GET https://localhost:7144/_vs/browserLink - null null
+[2025-08-24 10:17:34 INF] Request finished HTTP/2 GET https://localhost:7144/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.1022ms
+[2025-08-24 10:17:34 INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - null null
+[2025-08-24 10:17:34 INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.1602ms
+[2025-08-24 10:17:52 INF] Request starting HTTP/2 POST https://localhost:7144/api/Auth/ChangePassword - application/json 84
+[2025-08-24 10:17:52 INF] Executing endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI)'
+[2025-08-24 10:17:52 INF] Route matched with {action = "ChangePassword", controller = "Auth"}. Executing controller action with signature CommonDtos.ApiResponse ChangePassword(ActiveDirectoryService.Application.Dtos.ChangePasswordRequestDto) on controller ActiveDirectoryService.WebAPI.Controllers.AuthController (ActiveDirectoryService.WebAPI).
+[2025-08-24 10:17:52 INF] RabbitMQ Client is trying to connect
+[2025-08-24 10:17:52 INF] RabbitMQ persistent connection acquired a connection
+[2025-08-24 10:17:52 INF] Executing action method ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI) - Validation state: "Valid"
+[2025-08-24 10:17:53 WRN] 2025/8/24 10:17:53修改密出错： The LDAP server is unavailable.
+[2025-08-24 10:17:53 INF] Executed action method ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 514.4304ms.
+[2025-08-24 10:17:53 INF] Executing ObjectResult, writing value of type 'CommonDtos.ApiResponse'.
+[2025-08-24 10:17:53 INF] Executed action ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI) in 860.7695ms
+[2025-08-24 10:17:53 INF] Executed endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI)'
+[2025-08-24 10:17:53 INF] Request finished HTTP/2 POST https://localhost:7144/api/Auth/ChangePassword - 200 null application/json; charset=utf-8 891.5062ms
+[2025-08-24 10:18:07 INF] Request starting HTTP/2 POST https://localhost:7144/api/Auth/ChangePassword - application/json 84
+[2025-08-24 10:18:07 INF] Executing endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI)'
+[2025-08-24 10:18:07 INF] Route matched with {action = "ChangePassword", controller = "Auth"}. Executing controller action with signature CommonDtos.ApiResponse ChangePassword(ActiveDirectoryService.Application.Dtos.ChangePasswordRequestDto) on controller ActiveDirectoryService.WebAPI.Controllers.AuthController (ActiveDirectoryService.WebAPI).
+[2025-08-24 10:18:07 INF] Executing action method ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI) - Validation state: "Valid"
+[2025-08-24 10:29:19 INF] 应用启动成功
+[2025-08-24 10:29:19 INF] Now listening on: https://localhost:7144
+[2025-08-24 10:29:19 INF] Now listening on: http://localhost:5242
+[2025-08-24 10:29:19 INF] Application started. Press Ctrl+C to shut down.
+[2025-08-24 10:29:19 INF] Hosting environment: Development
+[2025-08-24 10:29:19 INF] Content root path: F:\.NET Practice\11_30\ActiveDirectoryService.WebAPI
+[2025-08-24 10:29:20 INF] Request starting HTTP/2 GET https://localhost:7144/swagger/index.html - null null
+[2025-08-24 10:29:20 INF] Request finished HTTP/2 GET https://localhost:7144/swagger/index.html - 200 null text/html;charset=utf-8 249.8611ms
+[2025-08-24 10:29:20 INF] Request starting HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - null null
+[2025-08-24 10:29:20 INF] Request starting HTTP/2 GET https://localhost:7144/_vs/browserLink - null null
+[2025-08-24 10:29:20 INF] Request finished HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - 200 16543 application/javascript; charset=utf-8 5.9577ms
+[2025-08-24 10:29:20 INF] Request finished HTTP/2 GET https://localhost:7144/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.7377ms
+[2025-08-24 10:29:20 INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - null null
+[2025-08-24 10:29:20 INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 7.3462ms
+[2025-08-24 10:29:40 INF] Request starting HTTP/2 POST https://localhost:7144/api/Auth/ChangePassword - application/json 84
+[2025-08-24 10:29:40 INF] Executing endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI)'
+[2025-08-24 10:29:40 INF] Route matched with {action = "ChangePassword", controller = "Auth"}. Executing controller action with signature CommonDtos.ApiResponse ChangePassword(ActiveDirectoryService.Application.Dtos.ChangePasswordRequestDto) on controller ActiveDirectoryService.WebAPI.Controllers.AuthController (ActiveDirectoryService.WebAPI).
+[2025-08-24 10:29:40 INF] RabbitMQ Client is trying to connect
+[2025-08-24 10:29:40 INF] RabbitMQ persistent connection acquired a connection
+[2025-08-24 10:29:40 INF] Executing action method ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI) - Validation state: "Valid"
+[2025-08-24 10:31:06 INF] 应用启动成功
+[2025-08-24 10:31:06 INF] Now listening on: https://localhost:7144
+[2025-08-24 10:31:06 INF] Now listening on: http://localhost:5242
+[2025-08-24 10:31:06 INF] Application started. Press Ctrl+C to shut down.
+[2025-08-24 10:31:06 INF] Hosting environment: Development
+[2025-08-24 10:31:06 INF] Content root path: F:\.NET Practice\11_30\ActiveDirectoryService.WebAPI
+[2025-08-24 10:31:06 INF] Request starting HTTP/2 GET https://localhost:7144/swagger/index.html - null null
+[2025-08-24 10:31:07 INF] Request finished HTTP/2 GET https://localhost:7144/swagger/index.html - 200 null text/html;charset=utf-8 276.8608ms
+[2025-08-24 10:31:07 INF] Request starting HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - null null
+[2025-08-24 10:31:07 INF] Request finished HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - 200 16543 application/javascript; charset=utf-8 4.8884ms
+[2025-08-24 10:31:07 INF] Request starting HTTP/2 GET https://localhost:7144/_vs/browserLink - null null
+[2025-08-24 10:31:07 INF] Request finished HTTP/2 GET https://localhost:7144/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.3399ms
+[2025-08-24 10:31:07 INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - null null
+[2025-08-24 10:31:07 INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.0661ms
+[2025-08-24 10:31:49 INF] Request starting HTTP/2 POST https://localhost:7144/api/Auth/ChangePassword - application/json 84
+[2025-08-24 10:31:49 INF] Executing endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI)'
+[2025-08-24 10:31:49 INF] Route matched with {action = "ChangePassword", controller = "Auth"}. Executing controller action with signature CommonDtos.ApiResponse ChangePassword(ActiveDirectoryService.Application.Dtos.ChangePasswordRequestDto) on controller ActiveDirectoryService.WebAPI.Controllers.AuthController (ActiveDirectoryService.WebAPI).
+[2025-08-24 10:31:49 INF] RabbitMQ Client is trying to connect
+[2025-08-24 10:31:49 INF] RabbitMQ persistent connection acquired a connection
+[2025-08-24 10:31:49 INF] Executing action method ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI) - Validation state: "Valid"
+[2025-08-24 10:47:06 INF] 应用启动成功
+[2025-08-24 10:47:06 INF] Now listening on: http://localhost:5242
+[2025-08-24 10:47:06 INF] Application started. Press Ctrl+C to shut down.
+[2025-08-24 10:47:06 INF] Hosting environment: Development
+[2025-08-24 10:47:06 INF] Content root path: F:\.NET Practice\11_30\ActiveDirectoryService.WebAPI
+[2025-08-24 10:47:07 INF] Request starting HTTP/1.1 GET http://localhost:5242/swagger - null null
+[2025-08-24 10:47:07 INF] Request finished HTTP/1.1 GET http://localhost:5242/swagger - 301 0 null 225.3313ms
+[2025-08-24 10:47:07 INF] Request starting HTTP/1.1 GET http://localhost:5242/swagger/index.html - null null
+[2025-08-24 10:47:07 INF] Request finished HTTP/1.1 GET http://localhost:5242/swagger/index.html - 200 null text/html;charset=utf-8 45.9325ms
+[2025-08-24 10:47:07 INF] Request starting HTTP/1.1 GET http://localhost:5242/swagger/swagger-ui-bundle.js - null null
+[2025-08-24 10:47:07 INF] Request starting HTTP/1.1 GET http://localhost:5242/swagger/swagger-ui.css - null null
+[2025-08-24 10:47:07 INF] Request starting HTTP/1.1 GET http://localhost:5242/swagger/swagger-ui-standalone-preset.js - null null
+[2025-08-24 10:47:07 INF] Request starting HTTP/1.1 GET http://localhost:5242/_framework/aspnetcore-browser-refresh.js - null null
+[2025-08-24 10:47:07 INF] Request starting HTTP/1.1 GET http://localhost:5242/_vs/browserLink - null null
+[2025-08-24 10:47:07 INF] Request finished HTTP/1.1 GET http://localhost:5242/_framework/aspnetcore-browser-refresh.js - 200 16543 application/javascript; charset=utf-8 10.5558ms
+[2025-08-24 10:47:07 INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[2025-08-24 10:47:07 INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[2025-08-24 10:47:07 INF] Request finished HTTP/1.1 GET http://localhost:5242/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 57.0792ms
+[2025-08-24 10:47:07 INF] Request finished HTTP/1.1 GET http://localhost:5242/swagger/swagger-ui.css - 200 152034 text/css 58.9146ms
+[2025-08-24 10:47:07 INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[2025-08-24 10:47:07 INF] Request finished HTTP/1.1 GET http://localhost:5242/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 66.412ms
+[2025-08-24 10:47:07 INF] Request finished HTTP/1.1 GET http://localhost:5242/_vs/browserLink - 200 null text/javascript; charset=UTF-8 68.8084ms
+[2025-08-24 10:47:07 INF] Request starting HTTP/1.1 GET http://localhost:5242/swagger/v1/swagger.json - null null
+[2025-08-24 10:47:07 INF] Request finished HTTP/1.1 GET http://localhost:5242/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 5.6741ms
+[2025-08-24 10:47:07 INF] Request starting HTTP/1.1 GET http://localhost:5242/swagger/favicon-32x32.png - null null
+[2025-08-24 10:47:07 INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+[2025-08-24 10:47:07 INF] Request finished HTTP/1.1 GET http://localhost:5242/swagger/favicon-32x32.png - 200 628 image/png 0.5661ms
+[2025-08-24 10:47:42 INF] Request starting HTTP/1.1 POST http://localhost:5242/api/Auth/ChangePassword - application/json 84
+[2025-08-24 10:47:42 WRN] Failed to determine the https port for redirect.
+[2025-08-24 10:47:42 INF] Executing endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI)'
+[2025-08-24 10:47:42 INF] Route matched with {action = "ChangePassword", controller = "Auth"}. Executing controller action with signature CommonDtos.ApiResponse ChangePassword(ActiveDirectoryService.Application.Dtos.ChangePasswordRequestDto) on controller ActiveDirectoryService.WebAPI.Controllers.AuthController (ActiveDirectoryService.WebAPI).
+[2025-08-24 10:47:42 INF] RabbitMQ Client is trying to connect
+[2025-08-24 10:47:42 INF] RabbitMQ persistent connection acquired a connection
+[2025-08-24 10:47:43 INF] Executing action method ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI) - Validation state: "Valid"
+[2025-08-24 10:47:49 INF] 2025/8/24 10:47:49修改密码成功，用户：998398   
+[2025-08-24 10:47:49 INF] Executed action method ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 6267.9345ms.
+[2025-08-24 10:47:49 INF] Executing ObjectResult, writing value of type 'CommonDtos.ApiResponse'.
+[2025-08-24 10:47:49 INF] Executed action ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI) in 6556.8798ms
+[2025-08-24 10:47:49 INF] Executed endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI)'
+[2025-08-24 10:47:49 INF] Request finished HTTP/1.1 POST http://localhost:5242/api/Auth/ChangePassword - 200 null application/json; charset=utf-8 6592.8556ms
+[2025-08-24 15:22:19 INF] 应用启动成功
+[2025-08-24 15:22:19 INF] Now listening on: https://localhost:7144
+[2025-08-24 15:22:19 INF] Now listening on: http://localhost:5242
+[2025-08-24 15:22:19 INF] Application started. Press Ctrl+C to shut down.
+[2025-08-24 15:22:19 INF] Hosting environment: Development
+[2025-08-24 15:22:19 INF] Content root path: F:\.NET Practice\11_30\ActiveDirectoryService.WebAPI
+[2025-08-24 15:22:20 INF] Request starting HTTP/2 GET https://localhost:7144/swagger/index.html - null null
+[2025-08-24 15:22:20 INF] Request starting HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - null null
+[2025-08-24 15:22:20 INF] Request finished HTTP/2 GET https://localhost:7144/swagger/index.html - 200 null text/html;charset=utf-8 346.9948ms
+[2025-08-24 15:22:20 INF] Request finished HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - 200 16543 application/javascript; charset=utf-8 6.3843ms
+[2025-08-24 15:22:20 INF] Request starting HTTP/2 GET https://localhost:7144/_vs/browserLink - null null
+[2025-08-24 15:22:20 INF] Request finished HTTP/2 GET https://localhost:7144/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.7145ms
+[2025-08-24 15:22:20 INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - null null
+[2025-08-24 15:22:20 INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 58.7594ms
+[2025-08-24 15:22:42 INF] Request starting HTTP/2 POST https://localhost:7144/api/Auth/ChangePassword - application/json 84
+[2025-08-24 15:22:42 INF] Executing endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI)'
+[2025-08-24 15:22:42 INF] Route matched with {action = "ChangePassword", controller = "Auth"}. Executing controller action with signature CommonDtos.ApiResponse ChangePassword(ActiveDirectoryService.Application.Dtos.ChangePasswordRequestDto) on controller ActiveDirectoryService.WebAPI.Controllers.AuthController (ActiveDirectoryService.WebAPI).
+[2025-08-24 15:22:42 INF] RabbitMQ Client is trying to connect
+[2025-08-24 15:22:42 INF] RabbitMQ persistent connection acquired a connection
+[2025-08-24 15:22:42 INF] Executing action method ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI) - Validation state: "Valid"
+[2025-08-24 15:22:45 INF] 2025/8/24 15:22:45修改密码成功，用户：998398   
+[2025-08-24 15:22:45 INF] Executed action method ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2244.5773ms.
+[2025-08-24 15:22:45 INF] Executing ObjectResult, writing value of type 'CommonDtos.ApiResponse'.
+[2025-08-24 15:22:45 INF] Executed action ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI) in 2439.2386ms
+[2025-08-24 15:22:45 INF] Executed endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.ChangePassword (ActiveDirectoryService.WebAPI)'
+[2025-08-24 15:22:45 INF] Request finished HTTP/2 POST https://localhost:7144/api/Auth/ChangePassword - 200 null application/json; charset=utf-8 2477.7381ms
+[2025-08-24 15:36:26 INF] 应用启动成功
+[2025-08-24 15:36:27 INF] Now listening on: https://localhost:7144
+[2025-08-24 15:36:27 INF] Now listening on: http://localhost:5242
+[2025-08-24 15:36:27 INF] Application started. Press Ctrl+C to shut down.
+[2025-08-24 15:36:27 INF] Hosting environment: Development
+[2025-08-24 15:36:27 INF] Content root path: F:\.NET Practice\11_30\ActiveDirectoryService.WebAPI
+[2025-08-24 15:36:28 INF] Request starting HTTP/2 GET https://localhost:7144/swagger/index.html - null null
+[2025-08-24 15:36:28 INF] Request finished HTTP/2 GET https://localhost:7144/swagger/index.html - 200 null text/html;charset=utf-8 226.2885ms
+[2025-08-24 15:36:28 INF] Request starting HTTP/2 GET https://localhost:7144/_vs/browserLink - null null
+[2025-08-24 15:36:28 INF] Request starting HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - null null
+[2025-08-24 15:36:28 INF] Request finished HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - 200 16543 application/javascript; charset=utf-8 5.9167ms
+[2025-08-24 15:36:28 INF] Request finished HTTP/2 GET https://localhost:7144/_vs/browserLink - 200 null text/javascript; charset=UTF-8 35.7578ms
+[2025-08-24 15:36:28 INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - null null
+[2025-08-24 15:36:28 INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.5798ms
+[2025-08-24 15:36:38 INF] Request starting HTTP/2 POST https://localhost:7144/api/Auth/SendCapcha - application/json 26
+[2025-08-24 15:36:38 INF] Executing endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.SendCapcha (ActiveDirectoryService.WebAPI)'
+[2025-08-24 15:36:38 INF] Route matched with {action = "SendCapcha", controller = "Auth"}. Executing controller action with signature CommonDtos.ApiResponse SendCapcha(ActiveDirectoryService.Application.Dtos.ForgotPasswordRequestDto) on controller ActiveDirectoryService.WebAPI.Controllers.AuthController (ActiveDirectoryService.WebAPI).
+[2025-08-24 15:36:38 INF] RabbitMQ Client is trying to connect
+[2025-08-24 15:36:38 INF] RabbitMQ persistent connection acquired a connection
+[2025-08-24 15:36:38 INF] Executing action method ActiveDirectoryService.WebAPI.Controllers.AuthController.SendCapcha (ActiveDirectoryService.WebAPI) - Validation state: "Valid"
+[2025-08-24 15:36:39 INF] Executed action method ActiveDirectoryService.WebAPI.Controllers.AuthController.SendCapcha (ActiveDirectoryService.WebAPI), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 376.6375ms.
+[2025-08-24 15:36:39 INF] Executing ObjectResult, writing value of type 'CommonDtos.ApiResponse'.
+[2025-08-24 15:36:39 INF] Executed action ActiveDirectoryService.WebAPI.Controllers.AuthController.SendCapcha (ActiveDirectoryService.WebAPI) in 726.6639ms
+[2025-08-24 15:36:39 INF] Executed endpoint 'ActiveDirectoryService.WebAPI.Controllers.AuthController.SendCapcha (ActiveDirectoryService.WebAPI)'
+[2025-08-24 15:36:39 INF] Request finished HTTP/2 POST https://localhost:7144/api/Auth/SendCapcha - 200 null application/json; charset=utf-8 756.5256ms
+[2025-08-24 15:36:39 INF] Published event to exchange global_events_exchange: ForgotPasswordRequestedEvent ("7461f3a4-70b4-40d4-9bf2-357f26131ea5")
