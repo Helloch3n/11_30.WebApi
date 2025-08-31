@@ -8,11 +8,6 @@
         "DebugTarget": "https"
       },
       {
-        "Path": "11_30.Blazor\\11_30.Blazor.csproj",
-        "Action": "Start",
-        "DebugTarget": "https"
-      },
-      {
         "Path": "ActiveDirectoryService.WebAPI\\ActiveDirectoryService.WebAPI.csproj",
         "Action": "Start",
         "DebugTarget": "https"

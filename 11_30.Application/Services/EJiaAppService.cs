@@ -20,7 +20,7 @@ namespace _11_30.Application.Services
 
         public EJiaAppService(ISeleniumService seleniumService)
         {
-            _seleniumService=seleniumService;
+            _seleniumService = seleniumService;
         }
 
         public async Task AutoNewsAsync(string userName, string passWord, DateTime startDate, DateTime endDate, string newsType)
@@ -31,14 +31,25 @@ namespace _11_30.Application.Services
             WebDriverWait driverWait = _seleniumService.CreateDriverWait(driver);
             //访问url
             await _seleniumService.GotoUrlAsync(driver, "https://ejia.tbea.com/home/");
-            //登陆账号
-            _seleniumService.EJiaLogin(driverWait, userName, passWord);
+            try
+            {
+                //登陆账号
+                _seleniumService.EJiaLogin(driverWait, userName, passWord);
+            }
+            catch (Exception ex)
+            {
+                //记录日志
+                //日志。。。
+                driver.Quit();
+                throw new Exception("我的心好累，你好好检查一下账号密码!");
+            }
             //获取消息IFrame，切换进入消息
             var iFrame = _seleniumService.EJiaEnterMsg(driverWait, driver);
             //开始新闻阅读
             _seleniumService.EJiaStartReadNews(driverWait, driver, newsType, startDate, endDate, iFrame);
             //退出浏览器
             driver.Quit();
+
         }
     }
 }

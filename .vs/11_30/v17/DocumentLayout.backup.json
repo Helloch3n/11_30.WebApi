@@ -1,7 +1,64 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "F:\\.NET Practice\\11_30\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{012C742F-1EF7-4683-A090-33EA47429DFD}|11_30.Infrastructure\\11_30.Infrastructure.csproj|f:\\.net practice\\11_30\\11_30.infrastructure\\external\\selenium\\seleniumservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012C742F-1EF7-4683-A090-33EA47429DFD}|11_30.Infrastructure\\11_30.Infrastructure.csproj|solutionrelative:11_30.infrastructure\\external\\selenium\\seleniumservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E307F17-62F3-44D4-A77E-07399B9AB361}|11_30.Application\\11_30.Application.csproj|f:\\.net practice\\11_30\\11_30.application\\services\\ejiaappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E307F17-62F3-44D4-A77E-07399B9AB361}|11_30.Application\\11_30.Application.csproj|solutionrelative:11_30.application\\services\\ejiaappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012C742F-1EF7-4683-A090-33EA47429DFD}|11_30.Infrastructure\\11_30.Infrastructure.csproj|f:\\.net practice\\11_30\\11_30.infrastructure\\external\\selenium\\iseleniumservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012C742F-1EF7-4683-A090-33EA47429DFD}|11_30.Infrastructure\\11_30.Infrastructure.csproj|solutionrelative:11_30.infrastructure\\external\\selenium\\iseleniumservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F148EFC-E8F2-446C-A130-4DAD41B04D07}|11_30.WebApi\\11_30.WebAPI.csproj|f:\\.net practice\\11_30\\11_30.webapi\\controllers\\ejiacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F148EFC-E8F2-446C-A130-4DAD41B04D07}|11_30.WebApi\\11_30.WebAPI.csproj|solutionrelative:11_30.webapi\\controllers\\ejiacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB574824-7649-4C67-AB62-FD11B4A62692}|11_30.Blazor\\11_30.Blazor.csproj|f:\\.net practice\\11_30\\11_30.blazor\\pages\\activedirectory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB574824-7649-4C67-AB62-FD11B4A62692}|11_30.Blazor\\11_30.Blazor.csproj|solutionrelative:11_30.blazor\\pages\\activedirectory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB574824-7649-4C67-AB62-FD11B4A62692}|11_30.Blazor\\11_30.Blazor.csproj|f:\\.net practice\\11_30\\11_30.blazor\\pages\\ejiaautonews.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB574824-7649-4C67-AB62-FD11B4A62692}|11_30.Blazor\\11_30.Blazor.csproj|solutionrelative:11_30.blazor\\pages\\ejiaautonews.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB574824-7649-4C67-AB62-FD11B4A62692}|11_30.Blazor\\11_30.Blazor.csproj|f:\\.net practice\\11_30\\11_30.blazor\\pages\\generalquery.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB574824-7649-4C67-AB62-FD11B4A62692}|11_30.Blazor\\11_30.Blazor.csproj|solutionrelative:11_30.blazor\\pages\\generalquery.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB574824-7649-4C67-AB62-FD11B4A62692}|11_30.Blazor\\11_30.Blazor.csproj|f:\\.net practice\\11_30\\11_30.blazor\\pages\\generalqueryoperation.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB574824-7649-4C67-AB62-FD11B4A62692}|11_30.Blazor\\11_30.Blazor.csproj|solutionrelative:11_30.blazor\\pages\\generalqueryoperation.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB574824-7649-4C67-AB62-FD11B4A62692}|11_30.Blazor\\11_30.Blazor.csproj|f:\\.net practice\\11_30\\11_30.blazor\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB574824-7649-4C67-AB62-FD11B4A62692}|11_30.Blazor\\11_30.Blazor.csproj|solutionrelative:11_30.blazor\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB574824-7649-4C67-AB62-FD11B4A62692}|11_30.Blazor\\11_30.Blazor.csproj|f:\\.net practice\\11_30\\11_30.blazor\\pages\\lxautoanswer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB574824-7649-4C67-AB62-FD11B4A62692}|11_30.Blazor\\11_30.Blazor.csproj|solutionrelative:11_30.blazor\\pages\\lxautoanswer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F148EFC-E8F2-446C-A130-4DAD41B04D07}|11_30.WebApi\\11_30.WebAPI.csproj|f:\\.net practice\\11_30\\11_30.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F148EFC-E8F2-446C-A130-4DAD41B04D07}|11_30.WebApi\\11_30.WebAPI.csproj|solutionrelative:11_30.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F148EFC-E8F2-446C-A130-4DAD41B04D07}|11_30.WebApi\\11_30.WebAPI.csproj|f:\\.net practice\\11_30\\11_30.webapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2F148EFC-E8F2-446C-A130-4DAD41B04D07}|11_30.WebApi\\11_30.WebAPI.csproj|solutionrelative:11_30.webapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F148EFC-E8F2-446C-A130-4DAD41B04D07}|11_30.WebApi\\11_30.WebAPI.csproj|f:\\.net practice\\11_30\\11_30.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2F148EFC-E8F2-446C-A130-4DAD41B04D07}|11_30.WebApi\\11_30.WebAPI.csproj|solutionrelative:11_30.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB574824-7649-4C67-AB62-FD11B4A62692}|11_30.Blazor\\11_30.Blazor.csproj|f:\\.net practice\\11_30\\11_30.blazor\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CB574824-7649-4C67-AB62-FD11B4A62692}|11_30.Blazor\\11_30.Blazor.csproj|solutionrelative:11_30.blazor\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +66,193 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ActiveDirectory.razor",
+              "DocumentMoniker": "F:\\.NET Practice\\11_30\\11_30.Blazor\\Pages\\ActiveDirectory.razor",
+              "RelativeDocumentMoniker": "11_30.Blazor\\Pages\\ActiveDirectory.razor",
+              "ToolTip": "F:\\.NET Practice\\11_30\\11_30.Blazor\\Pages\\ActiveDirectory.razor",
+              "RelativeToolTip": "11_30.Blazor\\Pages\\ActiveDirectory.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T12:27:51.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GeneralQueryOperation.razor",
+              "DocumentMoniker": "F:\\.NET Practice\\11_30\\11_30.Blazor\\Pages\\GeneralQueryOperation.razor",
+              "RelativeDocumentMoniker": "11_30.Blazor\\Pages\\GeneralQueryOperation.razor",
+              "ToolTip": "F:\\.NET Practice\\11_30\\11_30.Blazor\\Pages\\GeneralQueryOperation.razor",
+              "RelativeToolTip": "11_30.Blazor\\Pages\\GeneralQueryOperation.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T12:27:46.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GeneralQuery.razor",
+              "DocumentMoniker": "F:\\.NET Practice\\11_30\\11_30.Blazor\\Pages\\GeneralQuery.razor",
+              "RelativeDocumentMoniker": "11_30.Blazor\\Pages\\GeneralQuery.razor",
+              "ToolTip": "F:\\.NET Practice\\11_30\\11_30.Blazor\\Pages\\GeneralQuery.razor",
+              "RelativeToolTip": "11_30.Blazor\\Pages\\GeneralQuery.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T12:27:45.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Home.razor",
+              "DocumentMoniker": "F:\\.NET Practice\\11_30\\11_30.Blazor\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "11_30.Blazor\\Pages\\Home.razor",
+              "ToolTip": "F:\\.NET Practice\\11_30\\11_30.Blazor\\Pages\\Home.razor",
+              "RelativeToolTip": "11_30.Blazor\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T12:27:45.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LxAutoAnswer.razor",
+              "DocumentMoniker": "F:\\.NET Practice\\11_30\\11_30.Blazor\\Pages\\LxAutoAnswer.razor",
+              "RelativeDocumentMoniker": "11_30.Blazor\\Pages\\LxAutoAnswer.razor",
+              "ToolTip": "F:\\.NET Practice\\11_30\\11_30.Blazor\\Pages\\LxAutoAnswer.razor",
+              "RelativeToolTip": "11_30.Blazor\\Pages\\LxAutoAnswer.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T12:27:43.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SeleniumService.cs",
+              "DocumentMoniker": "F:\\.NET Practice\\11_30\\11_30.Infrastructure\\External\\Selenium\\SeleniumService.cs",
+              "RelativeDocumentMoniker": "11_30.Infrastructure\\External\\Selenium\\SeleniumService.cs",
+              "ToolTip": "F:\\.NET Practice\\11_30\\11_30.Infrastructure\\External\\Selenium\\SeleniumService.cs",
+              "RelativeToolTip": "11_30.Infrastructure\\External\\Selenium\\SeleniumService.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAswLQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T10:06:20.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\.NET Practice\\11_30\\11_30.WebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "11_30.WebApi\\appsettings.json",
+              "ToolTip": "F:\\.NET Practice\\11_30\\11_30.WebApi\\appsettings.json",
+              "RelativeToolTip": "11_30.WebApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-31T10:11:51.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EJiaAutoNews.razor",
+              "DocumentMoniker": "F:\\.NET Practice\\11_30\\11_30.Blazor\\Pages\\EJiaAutoNews.razor",
+              "RelativeDocumentMoniker": "11_30.Blazor\\Pages\\EJiaAutoNews.razor",
+              "ToolTip": "F:\\.NET Practice\\11_30\\11_30.Blazor\\Pages\\EJiaAutoNews.razor",
+              "RelativeToolTip": "11_30.Blazor\\Pages\\EJiaAutoNews.razor",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T10:07:42.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EJiaController.cs",
+              "DocumentMoniker": "F:\\.NET Practice\\11_30\\11_30.WebApi\\Controllers\\EJiaController.cs",
+              "RelativeDocumentMoniker": "11_30.WebApi\\Controllers\\EJiaController.cs",
+              "ToolTip": "F:\\.NET Practice\\11_30\\11_30.WebApi\\Controllers\\EJiaController.cs",
+              "RelativeToolTip": "11_30.WebApi\\Controllers\\EJiaController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAnwBUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T09:54:29.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EJiaAppService.cs",
+              "DocumentMoniker": "F:\\.NET Practice\\11_30\\11_30.Application\\Services\\EJiaAppService.cs",
+              "RelativeDocumentMoniker": "11_30.Application\\Services\\EJiaAppService.cs",
+              "ToolTip": "F:\\.NET Practice\\11_30\\11_30.Application\\Services\\EJiaAppService.cs",
+              "RelativeToolTip": "11_30.Application\\Services\\EJiaAppService.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAzwCwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T08:00:59.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ISeleniumService.cs",
+              "DocumentMoniker": "F:\\.NET Practice\\11_30\\11_30.Infrastructure\\External\\Selenium\\ISeleniumService.cs",
+              "RelativeDocumentMoniker": "11_30.Infrastructure\\External\\Selenium\\ISeleniumService.cs",
+              "ToolTip": "F:\\.NET Practice\\11_30\\11_30.Infrastructure\\External\\Selenium\\ISeleniumService.cs",
+              "RelativeToolTip": "11_30.Infrastructure\\External\\Selenium\\ISeleniumService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T10:51:41.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "F:\\.NET Practice\\11_30\\11_30.WebApi\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "11_30.WebApi\\appsettings.Development.json",
+              "ToolTip": "F:\\.NET Practice\\11_30\\11_30.WebApi\\appsettings.Development.json",
+              "RelativeToolTip": "11_30.WebApi\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-31T10:11:53.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\.NET Practice\\11_30\\11_30.WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "11_30.WebApi\\Program.cs",
+              "ToolTip": "F:\\.NET Practice\\11_30\\11_30.WebApi\\Program.cs",
+              "RelativeToolTip": "11_30.WebApi\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T12:02:30.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\.NET Practice\\11_30\\11_30.Blazor\\appsettings.json",
+              "RelativeDocumentMoniker": "11_30.Blazor\\appsettings.json",
+              "ToolTip": "F:\\.NET Practice\\11_30\\11_30.Blazor\\appsettings.json",
+              "RelativeToolTip": "11_30.Blazor\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-31T09:50:27.669Z",
+              "EditorCaption": ""
             }
           ]
         }

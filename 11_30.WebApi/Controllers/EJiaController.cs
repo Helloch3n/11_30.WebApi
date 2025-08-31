@@ -13,7 +13,7 @@ namespace _11_30.WebApi.Controllers
 
         public EJiaController(IEJiaAppService ejiAppService)
         {
-            _ejiAppService=ejiAppService;
+            _ejiAppService = ejiAppService;
         }
 
         [HttpPost()]
@@ -31,7 +31,7 @@ namespace _11_30.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return ApiResponse.Fail(ex.ToString());
+                return ApiResponse.Fail(ex.Message);
             }
 
         }

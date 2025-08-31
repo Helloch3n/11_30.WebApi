@@ -30,7 +30,7 @@ namespace _11_30.Infrastructure.External.Selenium
         {
             _questionBankRepository = questionsRepository;
             _questionsService = questionsService;
-            _configuration=configuration;
+            _configuration = configuration;
         }
 
         /// <summary>
@@ -45,13 +45,13 @@ namespace _11_30.Infrastructure.External.Selenium
         {
             foreach (var answer in answers)
             {
-                if ((int)answer <= options.Count()-1)
+                if ((int)answer <= options.Count() - 1)
                 {
                     driver.ExecuteJavaScript("arguments[0].click();", options[answer]);
                 }
             }
             //多选题点击确定
-            if (questionType =="多选题")
+            if (questionType == "多选题")
             {
                 driverWait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id=\"QuestionWrap\"]/div[2]/div/div/div/div/span"))).Click();
             }
@@ -67,7 +67,7 @@ namespace _11_30.Infrastructure.External.Selenium
         {
             //获取浏览器配置文件
             var DriverSection = _configuration.GetSection("DriverOption");
-            if (driverName=="Chrome")
+            if (driverName == "Chrome")
             {
                 var driver = DriverSection.GetSection("ChromeDriver").Value;
                 var options = new ChromeOptions();
@@ -78,10 +78,13 @@ namespace _11_30.Infrastructure.External.Selenium
                     //添加参数
                     options.AddArguments(args);
                 }
+                if (driver == string.Empty)
+                    //测试环境不需要driver
+                    return new ChromeDriver(options);
                 ChromeDriver chromeDriver = new ChromeDriver(driver, options);
                 return chromeDriver;
             }
-            else if (driverName=="Edge")
+            else if (driverName == "Edge")
             {
                 var options = new EdgeOptions();
                 EdgeDriver edgeDriver = new EdgeDriver(options);
@@ -161,7 +164,7 @@ namespace _11_30.Infrastructure.External.Selenium
         /// <returns></returns>
         public WebDriverWait CreateDriverWait(IWebDriver driver)
         {
-            WebDriverWait driverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+            WebDriverWait driverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
             return driverWait;
         }
 
@@ -173,14 +176,24 @@ namespace _11_30.Infrastructure.External.Selenium
             IWebElement passInputEL = driverWait.Until(ExpectedConditions.ElementExists(By.Id("password")));
             passInputEL.SendKeys($"{passWord}");
             driverWait.Until(ExpectedConditions.ElementExists(By.Id("log-btn"))).Click();
+            //寻找消息框检查是否登陆成功
+            Thread.Sleep(5000);
+            var msgEl = driverWait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/header/div[2]/div/div[3]/ul/li[2]/span")));
         }
 
         public void EJiaStartReadNews(WebDriverWait driverWait, IWebDriver driver, string newsType, DateTime startDate, DateTime endDate, IWebElement iFrame)
         {
             var chatPanel = driver.FindElement(By.XPath("//*[@id=\"msg-list\"]"));
             Thread.Sleep(3000);
-            var newsButton = driverWait.Until(d => d.FindElement(By.XPath($"//span[text()='{newsType}']")));
-            newsButton.Click();
+            try
+            {
+                var newsButton = driverWait.Until(d => d.FindElement(By.XPath($"//span[text()='{newsType}']")));
+                newsButton.Click();
+            }
+            catch
+            {
+                throw new Exception("检查一下你的新闻有没有置顶呀，我怎么找不到呢！");
+            }
             Thread.Sleep(2000);
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             int previousItemCount = 0;
@@ -188,20 +201,20 @@ namespace _11_30.Infrastructure.External.Selenium
             while (true)
             {
                 var chatItems = driver.FindElements(By.CssSelector(".chat-item"));
-                if (chatItems.Count==previousItemCount)
+                if (chatItems.Count == previousItemCount)
                 {
                     driver.SwitchTo().Frame(iFrame);
                     ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollBy(0, -100000);", chatPanel);
                 }
 
-                for (int i = chatItems.Count-1-previousItemCount; i >= 0; i--)
+                for (int i = chatItems.Count - 1 - previousItemCount; i >= 0; i--)
                 {
                     var chatItem = chatItems[i];
                     try
                     {
                         var timeElem = chatItem.FindElement(By.CssSelector(".send-time"));
                         string timeText = timeElem.Text.Trim();
-                        timeText="2025-"+timeText;
+                        timeText = "2025-" + timeText;
                         var sendTime = DateTime.Parse(timeText);
 
                         if (sendTime >= startDate && sendTime < endDate)
@@ -216,7 +229,7 @@ namespace _11_30.Infrastructure.External.Selenium
                                 var allHandles1 = driver.WindowHandles;
                                 var qty = allHandles1.Count;
                                 string mainHandle = allHandles1[0];
-                                string currentHandle = allHandles1[qty-1];
+                                string currentHandle = allHandles1[qty - 1];
                                 driver.SwitchTo().Window(currentHandle);
                                 // 滚动到底部触发懒加载
                                 ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollTo(0, document.body.scrollHeight);");
@@ -239,7 +252,7 @@ namespace _11_30.Infrastructure.External.Selenium
                         }
                         else
                         {
-                            exit=true;
+                            exit = true;
                             break;
                         }
                     }
